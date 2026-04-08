@@ -36,16 +36,22 @@ Visit: http://localhost:8082/api/transaction
 
 ## Instructor (deployment to Fly.io)
 Instructor-only steps (not in attendee README):
+Note: Some app names like crypto-svc-one and crypto-svc-two may already be taken globally. To avoid errors, we will use crypto-svc-v1 and crypto-svc-v2 for Fly deployment.
+
 - Create GitHub repo and push these files.
 - Use `flyctl` to create apps and deploy from the respective service folders:
   ```
-  cd service-a
-  fly launch --no-deploy --name crypto-svc-one
-  fly deploy --app crypto-svc-one --no-cache
+cd service-a
+# Launch the app (without deploying yet)
+fly launch --no-deploy --name crypto-svc-v1
+# Deploy the app
+fly deploy --app crypto-svc-v1 --no-cache
 
-  cd ../service-b
-  fly launch --no-deploy --name crypto-svc-two
-  fly deploy --app crypto-svc-two --no-cache
+cd ../service-b
+# Launch the app (without deploying yet)
+fly launch --no-deploy --name crypto-svc-v2
+# Deploy the app
+fly deploy --app crypto-svc-v2 --no-cache
   ```
 - After deployment, note the public URLs and share them with attendees as the "prod" endpoints.
 - To simulate outage of the service that lacks `limit`, scale it to zero:
