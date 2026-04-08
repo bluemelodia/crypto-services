@@ -40,19 +40,16 @@ Note: Some app names like crypto-svc-one and crypto-svc-two may already be taken
 
 - Create GitHub repo and push these files.
 - Use `flyctl` to create apps and deploy from the respective service folders:
-  ```
+
+```
 cd service-a
-# Launch the app (without deploying yet)
 fly launch --no-deploy --name crypto-svc-v1
-# Deploy the app
 fly deploy --app crypto-svc-v1 --no-cache
 
 cd ../service-b
-# Launch the app (without deploying yet)
 fly launch --no-deploy --name crypto-svc-v2
-# Deploy the app
 fly deploy --app crypto-svc-v2 --no-cache
-  ```
+```
 - After deployment, note the public URLs and share them with attendees as the "prod" endpoints.
 - To simulate outage of the service that lacks `limit`, scale it to zero:
   ```
