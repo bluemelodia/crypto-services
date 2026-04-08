@@ -14,7 +14,7 @@ Each service exposes a single endpoint: `/process` which returns a JSON payload.
 
 ## Run locally (using Docker)
 Build and run Service A:
-```bash
+```
 cd service-a
 docker build -t crypto-svc-one .
 docker run --rm -p 8081:8080 crypto-svc-one
@@ -22,7 +22,7 @@ docker run --rm -p 8081:8080 crypto-svc-one
 Visit: http://localhost:8081/api/transaction
 
 Build and run Service B (in a separate terminal):
-```bash
+```
 cd service-b
 docker build -t crypto-svc-two .
 docker run --rm -p 8082:8080 crypto-svc-two
